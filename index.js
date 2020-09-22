@@ -1,4 +1,5 @@
 const express = require('express');
+require('express-async-errors');
 const path = require('path');
 const chalk = require('chalk');
 const debug = require('debug')('index');
@@ -8,6 +9,7 @@ const { MongoClient } = require('mongodb');
 const bodyParser = require('body-parser');
 const expressSession = require('express-session');
 const mongoose = require('mongoose');
+
 
 const Entry = require('./models/detailModel');
 const User = require('./models/userModel');
@@ -31,12 +33,6 @@ app.use(morgan('tiny'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-
-
-
-// app.set('views', './src/views')
-// app.set('view engine', 'ejs');
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
