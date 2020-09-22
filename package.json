@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "DEBUG=index,index:* nodemon index.js",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "./node_modules/.bin/isparta cover mocha test/**/*Spec.js",
     "lint": "eslint . --fix",
     "scss": "node-sass --watch public/scss -o public/css"
