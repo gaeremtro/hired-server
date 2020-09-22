@@ -24,6 +24,20 @@ mongoose.connect('mongodb+srv://gaeremtro:49Chocsak.@hireddb.liatz.gcp.mongodb.n
 app.use(cookieParser());
 app.use(expressSession({ secret: 'hired' }));
 
+app.use(function (request, response, next) {
+    response.setHeader("Access-Control-Allow-Origin", "*");
+    response.setHeader("Access-Control-Allow-Credentials", "true");
+    response.setHeader(
+        "Access-Control-Allow-Methods",
+        "GET,HEAD,OPTIONS,POST,PUT,DELETE"
+    );
+    response.setHeader(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+    );
+    next();
+});
+
 app.use(morgan('tiny'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
