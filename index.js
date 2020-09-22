@@ -33,7 +33,7 @@ app.use(function (request, response, next) {
     );
     response.setHeader(
         "Access-Control-Allow-Headers",
-        "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization, Id-Token, Access-Token, Refresh-Token"
     );
     next();
 });
