@@ -19,7 +19,7 @@ const entryRouter = require('./routes/entryRouter');
 
 const app = express();
 const PORT = process.env.PORT;
-mongoose.connect('mongodb+srv://gaeremtro:49Chocsak.@hireddb.liatz.gcp.mongodb.net/skylab-hired?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://gaeremtro:ev.PASSWORD@hireddb.liatz.gcp.mongodb.net/skylab-hired?retryWrites=true&w=majority')
 
 app.use(cookieParser());
 app.use(expressSession({ secret: 'hired' }));
